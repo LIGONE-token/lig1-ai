@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>LIG1 KI Kosten Rechner</title>
+</head>
+
+<body style="font-family:Arial; max-width:700px; margin:40px auto;">
+
+<h1>KI Tool Kostenrechner</h1>
+
+<p>Wähle deine Tools:</p>
+
+<label><input type="checkbox" value="20"> ChatGPT Plus (20€)</label><br>
+<label><input type="checkbox" value="30"> Midjourney (30€)</label><br>
+<label><input type="checkbox" value="10"> Notion AI (10€)</label><br>
+
+<br>
+
+<button onclick="calc()">Kosten berechnen</button>
+
+<h2>Monatlich: <span id="m">0</span> €</h2>
+<h2>Jährlich: <span id="y">0</span> €</h2>
+
+<hr>
+
+<h2>Mit LIG1 sparen</h2>
+<p>Premium Kostenoptimierung mit LIG1 Token.</p>
+
+<script>
+function calc(){
+ let sum=0;
+ document.querySelectorAll("input:checked")
+ .forEach(e=>sum+=Number(e.value));
+ document.getElementById("m").innerText=sum;
+ document.getElementById("y").innerText=sum*12;
+}
+</script>
+
+</body>
+</html>
